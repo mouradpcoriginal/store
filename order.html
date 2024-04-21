@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="icon" href="./images/Frame 39.png" type="image/png">
+    <title>صفحة الطلب</title>
+</head>
+
+<body>
+    <div class="container" dir="rtl">
+        <a href="./index.html" style="text-decoration: none;
+        color: rgb(189, 7, 7); float: left; display: flex;
+        align-items: center; gap: 5px;"><span style="font-weight: bold; font-size: 20px;">رجوع</span><i
+                style=" font-size: 25px;" class="fa-solid fa-arrow-right-from-bracket"></i> </a>
+
+        <h2>تفاصيل المنتج</h2>
+        <div id="product-details">
+            <div class="imagePrice">
+                <p>السعر: <span id="product-price"></span></p>
+                <img src="" id="product-image" alt="صورة المنتج">
+            </div>
+            <div style="display: flex;
+            color: gold; width: 100%; justify-content: center; font-size: 23px; margin-bottom: 8px; gap: 4px;">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <form id="orderForm" action="https://formspree.io/f/myyrlpzz" method="POST">
+                <label for="Quantity">الكمية</label>
+                <input type="number" name="الكمية" id="Quantity" value="1" pattern="[1-9][0-9]*">
+                <p id="error-quantity" class="error-message" style="display:none;">من فضلك أدخل الكمية</p>
+                <label for="product-name">اسم المنتج </label>
+                <input type="text" name="إسم المنتج" id="product-name" readonly>
+                <label for="fullName">إسمك الكامل <i style="color: #8a0909;" class="fa-solid fa-user"></i></label>
+                <input type="text" id="fullName" name="الإسم الكامل" placeholder="أكتب إسمك الكامل">
+                <p id="error-fullname" class="error-message" style="display:none;">من فضلك أدخل الاسم الكامل</p>
+                <label for="yourNumber">رقم الهاتف <i style="color: #056f2f;"
+                        class="fa-solid fa-phone-volume"></i></label>
+                <input dir="rtl" type="number" id="yourNumber" name="رقم الهاتف" placeholder="أكتب رقم هاتفك">
+                <p id="error-number" class="error-message" style="display:none;">من فضلك أدخل رقم الهاتف بشكل صحيح (يبدأ
+                    بـ 05 أو 06 أو 07 ويحتوي على 10 أرقام)</p>
+                <label for="">إختر ولايتك <i style="color: #0e4fb1;" class="fa-solid fa-earth-americas"></i></label>
+                <select style="background: #ba1d1d25;" name="الولاية" id="state">
+                    <option value="" selected disabled>اختر ولايتك</option>
+                    <option value="أدرار">1. ولاية أدرار</option>
+                    <option value="الشلف">2. ولاية الشلف</option>
+                    <option value="الأغواط">3. ولاية الأغواط</option>
+                    <option value="أم البواقي">4. ولاية أم البواقي</option>
+                    <option value="باتنة">5. ولاية باتنة</option>
+                    <option value="بجاية">6. ولاية بجاية</option>
+                    <option value="بسكرة">7. ولاية بسكرة</option>
+                    <option value="بشار">8. ولاية بشار</option>
+                    <option value="البليدة">9. ولاية البليدة</option>
+                    <option value="البويرة">10. ولاية البويرة</option>
+                    <option value="تمنراست">11. ولاية تمنراست</option>
+                    <option value="تبسة">12. ولاية تبسة</option>
+                    <option value="تلمسان">13. ولاية تلمسان</option>
+                    <option value="تيارت">14. ولاية تيارت</option>
+                    <option value="تيزي وزو">15. ولاية تيزي وزو</option>
+                    <option value="الجزائر">16. ولاية الجزائر</option>
+                    <option value="الجلفة">17. ولاية الجلفة</option>
+                    <option value="جيجل">18. ولاية جيجل</option>
+                    <option value="سطيف">19. ولاية سطيف</option>
+                    <option value="سعيدة">20. ولاية سعيدة</option>
+                    <option value="سكيكدة">21. ولاية سكيكدة</option>
+                    <option value="سيدي بلعباس">22. ولاية سيدي بلعباس</option>
+                    <option value="عنابة">23. ولاية عنابة</option>
+                    <option value="قالمة">24. ولاية قالمة</option>
+                    <option value="قسنطينة">25. ولاية قسنطينة</option>
+                    <option value="المدية">26. ولاية المدية</option>
+                    <option value="مستغانم">27. ولاية مستغانم</option>
+                    <option value="المسيلة">28. ولاية المسيلة</option>
+                    <option value="معسكر">29. ولاية معسكر</option>
+                    <option value="ورقلة">30. ولاية ورقلة</option>
+                    <option value="وهران">31. ولاية وهران</option>
+                    <option value="البيض">32. ولاية البيض</option>
+                    <option value="إليزي">33. ولاية إليزي</option>
+                    <option value="برج بوعريريج">34. ولاية برج بوعريريج</option>
+                    <option value="بومرداس">35. ولاية بومرداس</option>
+                    <option value="الطارف">36. ولاية الطارف</option>
+                    <option value="تندوف">37. ولاية تندوف</option>
+                    <option value="تيسمسيلت">38. ولاية تيسمسيلت</option>
+                    <option value="الوادي">39. ولاية الوادي</option>
+                    <option value="خنشلة">40. ولاية خنشلة</option>
+                    <option value="سوق أهراس">41. ولاية سوق أهراس</option>
+                    <option value="تيبازة">42. ولاية تيبازة</option>
+                    <option value="ميلة">43. ولاية ميلة</option>
+                    <option value="عين الدفلى">44. ولاية عين الدفلى</option>
+                    <option value="النعامة">45. ولاية النعامة</option>
+                    <option value="عين تموشنت">46. ولاية عين تموشنت</option>
+                    <option value="غرداية">47. ولاية غرداية</option>
+                    <option value="غليزان">48. ولاية غليزان</option>
+                    <option value="تيميمون">49. ولاية تيميمون</option>
+                    <option value="برج باجي مختار">50. ولاية برج باجي مختار</option>
+                    <option value="أولاد جلال">51. ولاية أولاد جلال</option>
+                    <option value="بني عباس">52. ولاية بني عباس</option>
+                    <option value="إن صالح">53. ولاية إن صالح</option>
+                    <option value="عين قزام">54. ولاية عين قزام</option>
+                    <option value="تقرت">55. ولاية تقرت</option>
+                    <option value="جانت">56. ولاية جانت</option>
+                    <option value="المغير">57. ولاية المغير</option>
+                    <option value="المنيعة">58. ولاية المنيعة</option>
+                </select>
+                <p id="error-state" class="error-message" style="display:none;">من فضلك اختر الولاية</p>
+                <label for="yourNumber">البلدية <i style="color: #e38e27;" class="fa-solid fa-house"></i></label>
+                <input style="background: #ba1d1d25;" type="text" id="yourcity" name="البلدية" placeholder="اختياري">
+                <label for="">إختر التوصيل</label>
+                <select style="background: #ba1d1d25;" name="التوصيل" id="state">
+                    <option value="" selected disabled>اختر التوصيل</option>
+                    <option value="المنزل">المنزل</option>
+                    <option value="المكتب">المكتب</option>
+                </select>
+                <label for="">ملاحظة (اختياري)</label>
+              <textarea  style="font-family:  Cairo; padding: 5px; font-size: 15px;  background: white; outline: none;" placeholder="اكتب ملاحظة حول الطلب" name="ملاحظة" id="" cols="30" rows="6"></textarea>
+                <button type="submit" class="button">تأكيد الطلب</button>
+            </form>
+
+
+            <p style="color: brown;">سيتم التواصل معكم لتأكيد الطلب عبر الرقم المدخل</p>
+            <br>
+            <p>الوصف: <span id="product-description"></span></p>
+            <!-- <div class="del">
+                <h3>أسعار الشحن</h3>
+                <img src="./5.jpg" alt="">
+            </div> -->
+        </div>
+        <a class="phone-btn" href="tel:0663909450"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <script>
+        // استخراج البيانات من عنوان الصفحة
+        var urlParams = new URLSearchParams(window.location.search);
+        var productName = urlParams.get('productName');
+        var price = urlParams.get('price');
+        var description = urlParams.get('description');
+        var imageUrl = urlParams.get('imageUrl');
+
+        // عرض البيانات في صفحة الطلب
+        document.getElementById("product-name").value = productName;
+        document.getElementById('product-price').textContent = price + " دج";
+        document.getElementById('product-description').textContent = description;
+        document.getElementById('product-image').src = imageUrl;
+
+        const form = document.getElementById('orderForm');
+        form.addEventListener('submit', function (event) {
+            const quantity = document.getElementById('Quantity');
+            const fullName = document.getElementById('fullName');
+            const yourNumber = document.getElementById('yourNumber');
+            const state = document.getElementById('state');
+
+            if (!quantity.value.trim()) {
+                event.preventDefault();
+                quantity.classList.add('error');
+                document.getElementById('error-quantity').style.display = 'block';
+            } else {
+                quantity.classList.remove('error');
+                document.getElementById('error-quantity').style.display = 'none';
+            }
+
+            if (!fullName.value.trim()) {
+                event.preventDefault();
+                fullName.classList.add('error');
+                document.getElementById('error-fullname').style.display = 'block';
+            } else {
+                fullName.classList.remove('error');
+                document.getElementById('error-fullname').style.display = 'none';
+            }
+
+            if (!yourNumber.value.trim()) {
+                event.preventDefault();
+                yourNumber.classList.add('error');
+                document.getElementById('error-number').style.display = 'block';
+            } else {
+                yourNumber.classList.remove('error');
+                document.getElementById('error-number').style.display = 'none';
+            }
+
+            if (state.value === '') {
+                event.preventDefault();
+                state.classList.add('error');
+                document.getElementById('error-state').style.display = 'block';
+            } else {
+                state.classList.remove('error');
+                document.getElementById('error-state').style.display = 'none';
+            }
+
+            const phoneNumber = yourNumber.value.trim();
+            const validPhoneNumber = /^(05|06|07)\d{8}$/;
+
+            if (!validPhoneNumber.test(phoneNumber)) {
+                event.preventDefault();
+                yourNumber.classList.add('error');
+                document.getElementById('error-number').style.display = 'block';
+            } else {
+                yourNumber.classList.remove('error');
+                document.getElementById('error-number').style.display = 'none';
+            }
+        });
+
+        var originalPrice = parseFloat(document.getElementById("product-price").innerText);
+
+        function updatePrice() {
+            var quantity = document.getElementById("Quantity").value; // الكمية التي أدخلها المستخدم
+            var priceElement = document.getElementById("product-price"); // عنصر عرض السعر
+            var errorMessage = document.getElementById("error-quantity"); // عنصر الرسالة الخطأ
+
+            // إظهار رسالة الخطأ إذا كانت الكمية فارغة
+            if (quantity.trim() === "") {
+                errorMessage.style.display = "block";
+                priceElement.innerText = originalPrice + " دج"; // إعادة السعر إلى القيمة الأصلية
+                return;
+            } else {
+                errorMessage.style.display = "none";
+            }
+
+            // التأكد من أن القيمة المدخلة هي رقم صحيح
+            if (!isNaN(quantity) && parseInt(quantity) > 0) {
+                // تحديث قيمة السعر بحسب الكمية
+                priceElement.innerText = parseInt(quantity) * originalPrice + " دج";
+            }
+        }
+
+        document.getElementById("Quantity").addEventListener("input", updatePrice);
+    </script>
+
+</body>
+
+</html>
